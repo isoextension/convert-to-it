@@ -78,6 +78,9 @@ body {
   width: 50vw;
   min-height: 70vh;
   padding: 0.8em 7em;
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .format-container h2 {
   text-align: center;
