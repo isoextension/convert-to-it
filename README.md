@@ -1,3 +1,6 @@
+**This is a fork of Convert To It by P2R3. Please support the original project [here.](https://github.com/p2r3/convert.to.it**
+
+---
 # [Convert to it!](https://convert.to.it/)
 **Truly universal online file converter.**
 
