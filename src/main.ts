@@ -6,12 +6,14 @@ import { TraversionGraph } from "./TraversionGraph.js";
 /** Files currently selected for conversion */
 let selectedFiles: File[] = [];
 /**
- * Whether to use "simple" mode.
- * - In **simple** mode, the input/output lists are grouped by file format.
- * - In **advanced** mode, these lists are grouped by format handlers, which
+ * What mode Convert To It is in.
+ * - In **minimal** (0, 0b00) mode, the input/output lists are grouped by file format with
+ *   no MIME types or descriptions.
+ * - In **simple** (1, 0b01) mode, these lists are grouped by file formats.
+ * - In **advanced** (2, 0b10) mode, these lists are grouped by format handlers, which
  *   requires the user to manually select the tool that processes the output.
  */
-let simpleMode: boolean = true;
+let simpleMode: number = 0b01;
 
 /** Handlers that support conversion from any formats. */
 const conversionsFromAnyInput: ConvertPathNode[] = handlers
@@ -246,6 +248,7 @@ async function buildOptionList () {
       }
 
       const newOption = document.createElement("button");
+      newOption.classList
       newOption.setAttribute("format-index", (allOptions.length - 1).toString());
       newOption.setAttribute("mime-type", format.mime);
 
